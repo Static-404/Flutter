@@ -1,4 +1,3 @@
-import 'package:firstapp/screens/Home.dart';
 import 'package:firstapp/screens/Login.dart';
 import 'package:firstapp/screens/Registration.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,6 @@ class Navbar extends StatefulWidget {
 
 class _NavbarState extends State<Navbar> {
   List pages = [
-    const Home(),
     const Registration(),
     const Login(),
   ];
@@ -37,7 +35,6 @@ class _NavbarState extends State<Navbar> {
         showUnselectedLabels: false,
         elevation: 0,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.app_registration_outlined), label: "Registration"),
           BottomNavigationBarItem(icon: Icon(Icons.login_outlined), label: "Login"),
           ],

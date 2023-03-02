@@ -1,4 +1,5 @@
 
+import 'package:firstapp/screens/Home.dart';
 import 'package:firstapp/screens/Navbar.dart';
 import 'package:flutter/material.dart';
 // import 'package:go_router/go_router.dart';
@@ -34,11 +35,15 @@ class MyApp extends StatelessWidget {
     // double deviceHeight = MediaQuery.of(context).size.height;
     return MaterialApp(
       // routerConfig: _router,
-      title: 'Flutter Demo',
+      title: 'Library App',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: Navbar(),
+      initialRoute: 'Home',
+      routes: {
+        'Home': (context) => Home(),
+        'Navbar': (context) => Navbar(),
+      },
     );
   }
 }

@@ -10,7 +10,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  PageController _controller = PageController();
+  final PageController _controller = PageController();
   bool onLastPage = false;
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,12 @@ class _HomeState extends State<Home> {
                child: Row(
                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                  children: [
-                   const Text('Skip'),
+                   GestureDetector(
+                       onTap: () {
+                         Navigator.pushNamed(context, 'Navbar');
+
+                       },
+                       child: const Text('Skip')),
                    SmoothPageIndicator(
                      controller: _controller,
                      count: 3,
@@ -60,7 +65,21 @@ class _HomeState extends State<Home> {
                        type: SwapType.yRotation,
                      ),
                    ),
-                   onLastPage ? const Text('Done') : const Icon(Icons.arrow_forward),
+                   onLastPage
+                       ? GestureDetector(
+                       onTap: () {
+                         Navigator.pushNamed(context, 'Navbar');
+
+                       },
+                       child: const Text('Done'))
+                       : GestureDetector(
+                       onTap: (){
+                         _controller.nextPage(
+                             duration: Duration(microseconds: 500),
+                             curve: Curves.easeIn);
+                       },
+                       child: const Icon(Icons.arrow_forward)
+                   ),
                  ],
                ),
              )
