@@ -16,9 +16,25 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.green.withOpacity(0.7),
+          elevation: 0,
           title: const Text("Welcome"),
           centerTitle: true,
+          actions: [
+            IconButton(
+              onPressed: (){
+                Navigator.pushNamed(context, 'Navbar');
+              },
+              icon: Icon(Icons.person),
+            ),
+          ],
+          leading:
+          IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {
+
+            },
+          ),
         ),
        body: Stack(
            children: [
