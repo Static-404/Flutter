@@ -2,6 +2,7 @@
 import 'package:firstapp/screens/Home.dart';
 import 'package:firstapp/screens/Navbar.dart';
 import 'package:firstapp/screens/Login.dart';
+import 'package:firstapp/screens/Registration.dart';
 import 'package:flutter/material.dart';
 // import 'package:go_router/go_router.dart';
 
@@ -42,9 +43,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: 'Home',
       routes: {
-        'Home': (context) => Home(),
         'Navbar': (context) => Navbar(),
+        'Home': (context) => Home(),
         'Login': (context) => Login(),
+        'Registration': (context) => Registration(),
       },
     );
   }

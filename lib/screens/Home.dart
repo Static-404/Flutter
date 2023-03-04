@@ -25,17 +25,49 @@ class _HomeState extends State<Home> {
               onPressed: (){
                 Navigator.pushNamed(context, 'Navbar');
               },
-              icon: Icon(Icons.person),
+              icon: const Icon(Icons.person),
             ),
           ],
-          leading:
-          IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {
-
-            },
-          ),
+          // leading:
+          // IconButton(
+          //   icon: Icon(Icons.menu),
+          //   onPressed: () {
+          //
+          //   },
+          // ),
         ),
+       drawer: Drawer(
+         child: Container(
+           color: Colors.transparent,
+           child: ListView(
+             children: [
+               const DrawerHeader(child: Center(
+                 child: Text(
+                   'E-Lbrary',
+                   style: TextStyle(fontSize: 30),
+                 ),
+               ),
+               ),
+               ListTile(
+                 leading: const Icon(Icons.person),
+                 title: const Text('Registration', style: TextStyle(fontSize: 15),
+                 ),
+                 onTap: (){
+                   Navigator.pushNamed(context, 'Navbar');
+                 },
+               ),
+               ListTile(
+                 leading: const Icon(Icons.login_sharp),
+                 title: const Text('Login', style: TextStyle(fontSize: 15),
+                 ),
+                 onTap: (){
+                   Navigator.pushNamed(context, 'Login');
+                 },
+               ),
+             ],
+           ),
+         ),
+       ),
        body: Stack(
            children: [
              PageView(
@@ -91,7 +123,7 @@ class _HomeState extends State<Home> {
                        : GestureDetector(
                        onTap: (){
                          _controller.nextPage(
-                             duration: Duration(microseconds: 500),
+                             duration: const Duration(microseconds: 500),
                              curve: Curves.easeIn);
                        },
                        child: const Icon(Icons.arrow_forward)
