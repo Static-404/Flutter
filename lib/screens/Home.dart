@@ -64,6 +64,14 @@ class _HomeState extends State<Home> {
                    Navigator.pushNamed(context, 'Login');
                  },
                ),
+               ListTile(
+                 leading: const Icon(Icons.home),
+                 title: const Text('Home', style: TextStyle(fontSize: 15),
+                 ),
+                 onTap: (){
+                   Navigator.pushNamed(context, '1Page');
+                 },
+               ),
              ],
            ),
          ),

@@ -1,4 +1,5 @@
 
+import 'package:firstapp/screens/Firstpage.dart';
 import 'package:firstapp/screens/Home.dart';
 import 'package:firstapp/screens/Navbar.dart';
 import 'package:firstapp/screens/Login.dart';
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
         'Home': (context) => Home(),
         'Login': (context) => Login(),
         'Registration': (context) => Registration(),
+        '1Page': (context) => firstPage(),
       },
     );
   }
