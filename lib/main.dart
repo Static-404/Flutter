@@ -1,5 +1,5 @@
 
-import 'package:firstapp/screens/Firstpage.dart';
+import 'package:firstapp/screens/firstpage.dart';
 import 'package:firstapp/screens/Home.dart';
 import 'package:firstapp/screens/Navbar.dart';
 import 'package:firstapp/screens/Login.dart';
@@ -44,11 +44,11 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: 'Home',
       routes: {
-        'Navbar': (context) => Navbar(),
-        'Home': (context) => Home(),
-        'Login': (context) => Login(),
-        'Registration': (context) => Registration(),
-        '1Page': (context) => firstPage(),
+        'Navbar': (context) => const Navbar(),
+        'Home': (context) => const Home(),
+        'Login': (context) => const Login(),
+        'Registration': (context) => const Registration(),
+        '1Page': (context) => const FirstPage(),
       },
     );
   }
