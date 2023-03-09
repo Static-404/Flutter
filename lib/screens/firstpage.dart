@@ -17,76 +17,85 @@ class _FirstPageState extends State<FirstPage> {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(19.5)),
-              width: 400,
-              height: 300,
-              child: const Center(
-                child: Text(
-                  'first column',
-                  style: TextStyle(color: Colors.black, fontSize: 24),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 80,
-            ),
-            Container(
-              width: 400,
-              decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    width: 2,
-                    color: Colors.greenAccent,
+      body: Container(
+        color: Colors.greenAccent,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(19.5)),
+                width: 400,
+                height: 300,
+                child: const Center(
+                  child: Text(
+                    'first column',
+                    style: TextStyle(color: Colors.black, fontSize: 24),
                   ),
-                  borderRadius: BorderRadius.circular(20.5),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.blueGrey,
-                      offset: Offset(-3, 5),
-                    ),
-                  ]),
-              height: 100,
-              child: const Center(
-                child: Text(
-                  'second column',
-                  style: TextStyle(color: Colors.black, fontSize: 24),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.greenAccent,
-                    width: 2,
+              const SizedBox(
+                height: 80,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.greenAccent,
+                        ),
+                        borderRadius: BorderRadius.circular(10.0),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.blueGrey,
+                            offset: Offset(0, 0),
+                          ),
+                        ]),
+                    width: 190,
+                    height: 170,
+                    child: const Center(
+                      child: Text(
+                        '2',
+                        style: TextStyle(color: Colors.black, fontSize: 24),
+                      ),
+                    ),
                   ),
-                  borderRadius: BorderRadius.circular(20.0),
-                  boxShadow: const[
-                    BoxShadow(
-                      color: Colors.blueGrey,
-                      offset: Offset(-5, 5),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        border: Border.all(
+                          color: Colors.greenAccent,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(10.0),
+                        boxShadow: const[
+                          BoxShadow(
+                            color: Colors.blueGrey,
+                            offset: Offset(0, 0),
+                          ),
+                        ]),
+                    width: 190,
+                    height: 170,
+                    child: const Center(
+                      child:
+                      Text(
+                        '3',
+                        style: TextStyle(color: Colors.black, fontSize: 24),
+                      ),
                     ),
-                  ]),
-              width: 400,
-              height: 100,
-              child: const Center(
-                child: Text(
-                  'third column',
-                  style: TextStyle(color: Colors.black, fontSize: 24),
-                ),
+                  ),
+                ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
