@@ -72,6 +72,14 @@ class _HomeState extends State<Home> {
                    Navigator.pushNamed(context, '1Page');
                  },
                ),
+               ListTile(
+                 leading: const Icon(Icons.library_books_outlined),
+                 title: const Text('Books', style: TextStyle(fontSize: 15),
+                 ),
+                 onTap: (){
+                   Navigator.pushNamed(context, '2Page');
+                 },
+               ),
              ],
            ),
          ),

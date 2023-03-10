@@ -4,6 +4,7 @@ import 'package:firstapp/screens/Home.dart';
 import 'package:firstapp/screens/Navbar.dart';
 import 'package:firstapp/screens/Login.dart';
 import 'package:firstapp/screens/Registration.dart';
+import 'package:firstapp/screens/secondpage.dart';
 import 'package:flutter/material.dart';
 // import 'package:go_router/go_router.dart';
 
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
         'Login': (context) => const Login(),
         'Registration': (context) => const Registration(),
         '1Page': (context) => const FirstPage(),
+        '2Page': (context) => const SecondPage(),
       },
     );
   }
