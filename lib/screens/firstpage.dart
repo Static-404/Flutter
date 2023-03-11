@@ -16,6 +16,11 @@ class _FirstPageState extends State<FirstPage> {
           'Library',
           style: TextStyle(color: Colors.black),
         ),
+        actions: [
+          IconButton(onPressed: () {
+            Navigator.pushNamed(context, '2Page');
+          }, icon: Icon(Icons.book),)
+        ],
       ),
       body: Container(
         color: Colors.greenAccent,
@@ -31,7 +36,7 @@ class _FirstPageState extends State<FirstPage> {
                 height: 300,
                 child: const Center(
                   child: Text(
-                    'first column',
+                    'Dashboard',
                     style: TextStyle(color: Colors.black, fontSize: 24),
                   ),
                 ),
