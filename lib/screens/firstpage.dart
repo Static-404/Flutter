@@ -19,26 +19,30 @@ class _FirstPageState extends State<FirstPage> {
         actions: [
           IconButton(onPressed: () {
             Navigator.pushNamed(context, '2Page');
-          }, icon: Icon(Icons.book),)
+          }, icon: const Icon(Icons.book),)
         ],
       ),
       body: Container(
         color: Colors.greenAccent,
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(19.5)),
+                    color: Colors.transparent,
+                    border: Border.all(
+                      color: Colors.green,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(8.5)),
                 width: 400,
                 height: 300,
-                child: const Center(
-                  child: Text(
-                    'Dashboard',
-                    style: TextStyle(color: Colors.black, fontSize: 24),
-                  ),
+                child: const Text(
+                  'Dashboard',
+                  textAlign: TextAlign.start,
+                  // textDirection: TextDirection.ltr,
+                  style: TextStyle(color: Colors.black54, fontSize: 24,),
                 ),
               ),
               const SizedBox(
