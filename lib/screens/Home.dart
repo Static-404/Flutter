@@ -80,6 +80,14 @@ class _HomeState extends State<Home> {
                    Navigator.pushNamed(context, '2Page');
                  },
                ),
+               ListTile(
+                 leading: const Icon(Icons.list_alt_outlined,),
+                 title: const Text('Todo', style: TextStyle(fontSize: 15),
+                 ),
+                 onTap: (){
+                   Navigator.pushNamed(context, 'todo');
+                 },
+               ),
              ],
            ),
          ),

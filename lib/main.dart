@@ -5,11 +5,15 @@ import 'package:firstapp/screens/Navbar.dart';
 import 'package:firstapp/screens/Login.dart';
 import 'package:firstapp/screens/Registration.dart';
 import 'package:firstapp/screens/secondpage.dart';
+import 'package:firstapp/screens/todo.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 // import 'package:go_router/go_router.dart';
 
 
-void main() {
+void main() async{
+  await Hive.initFlutter("hive_box");
   runApp(const MyApp());
 }
 // final _router = GoRouter(
@@ -51,6 +55,7 @@ class MyApp extends StatelessWidget {
         'Registration': (context) => const Registration(),
         '1Page': (context) => const FirstPage(),
         '2Page': (context) => const SecondPage(),
+        'todo': (context) => const TaskPage(),
       },
     );
   }
