@@ -14,6 +14,7 @@ class _TaskPageState extends State<TaskPage> {
   String? content;
   Box? _box;
 
+
   @override
   Widget build(BuildContext context) {
     _deviceHeight = MediaQuery.of(context).size.height;
@@ -38,6 +39,62 @@ class _TaskPageState extends State<TaskPage> {
         itemCount: tasks.length,
         itemBuilder: (BuildContext context, int index) {
           var task = Task.fromMap(tasks[index]);
+          void _confirmCheckBox(){
+            showDialog(context: context, builder: (BuildContext context,) {
+              return AlertDialog(
+                backgroundColor: Colors.green,
+                title: Text('Are you done with this task?'),
+                actions: [
+                  MaterialButton(
+                    onPressed: (){
+                      task.done = true;
+                      _box!.putAt(index, task.toMap());
+                      setState(() {
+                        Navigator.pop(context);
+                      });
+                    },
+                    child: Text('yes'),
+                  ),
+                  MaterialButton(
+                    onPressed: (){
+                      task.done = false;
+                      _box!.putAt(index, task.toMap());
+                      setState(() {
+                        Navigator.pop(context);
+                      });
+                    },
+                    child: Text('No'),
+                  ),
+                ],
+              );
+            });
+          }
+          void _confirmDelete(){
+            showDialog(context: context, builder: (BuildContext context,) {
+              return AlertDialog(
+                title: Text('Are you sure you want to delete?'),
+                actions: [
+                  MaterialButton(
+                    onPressed: (){
+                      _box!.deleteAt(index);
+                      setState(() {
+                        Navigator.pop(context);
+                      });
+                    },
+                    child: Text('yes'),
+                  ),
+                  MaterialButton(
+                    onPressed: (){
+                      setState(() {
+                        Navigator.pop(context);
+                      });
+                    },
+                    child: Text('No'),
+                  ),
+                ],
+              );
+            });
+          }
           return ListTile(
             title: Text(task.todo),
             subtitle: Text(task.timeStamp.toString()),
@@ -48,18 +105,10 @@ class _TaskPageState extends State<TaskPage> {
                   )
                 : Icon(Icons.check_box_outline_blank),
             onTap: (){
-              task.done = !task.done;
-              _box!.putAt(index, task.toMap());
-              setState(() {});
+              return _confirmCheckBox();
             },
             onLongPress: (){
-              // showDialog(context: context, builder: (BuildContext context){
-              //   return AlertDialog(
-              //     title: Text('Are you sure you want to delete?'),
-              //   )
-              // });
-              _box!.deleteAt(index);
-              setState(() {});
+              return _confirmDelete();
             },
           );
 
@@ -78,8 +127,10 @@ class _TaskPageState extends State<TaskPage> {
     });
   }
 
+
+
   displayTaskPop(){
-    showDialog(context: context, builder: (BuildContext _context){
+    showDialog(context: context, builder: (BuildContext context){
       return AlertDialog(
         title: Text('Add a note'),
         content: TextField(
