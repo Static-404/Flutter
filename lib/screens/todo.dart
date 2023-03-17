@@ -26,9 +26,10 @@ class _TaskPageState extends State<TaskPage> {
 
       ),
       body: _tasksWidget(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         onPressed: displayTaskPop,
-        child: const Icon(Icons.add),
+        child:const Icon(Icons.add),
       ),
     );
   }
@@ -39,11 +40,11 @@ class _TaskPageState extends State<TaskPage> {
         itemCount: tasks.length,
         itemBuilder: (BuildContext context, int index) {
           var task = Task.fromMap(tasks[index]);
-          void _confirmCheckBox(){
+          void confirmCheckBox(){
             showDialog(context: context, builder: (BuildContext context,) {
               return AlertDialog(
                 backgroundColor: Colors.green,
-                title: Text('Are you done with this task?'),
+                title: const Text('Are you done with this task?'),
                 actions: [
                   MaterialButton(
                     onPressed: (){
@@ -53,7 +54,7 @@ class _TaskPageState extends State<TaskPage> {
                         Navigator.pop(context);
                       });
                     },
-                    child: Text('yes'),
+                    child: const Text('yes'),
                   ),
                   MaterialButton(
                     onPressed: (){
@@ -63,16 +64,16 @@ class _TaskPageState extends State<TaskPage> {
                         Navigator.pop(context);
                       });
                     },
-                    child: Text('No'),
+                    child: const Text('No'),
                   ),
                 ],
               );
             });
           }
-          void _confirmDelete(){
+          void confirmDelete(){
             showDialog(context: context, builder: (BuildContext context,) {
               return AlertDialog(
-                title: Text('Are you sure you want to delete?'),
+                title: const Text('Are you sure you want to delete?'),
                 actions: [
                   MaterialButton(
                     onPressed: (){
@@ -81,7 +82,7 @@ class _TaskPageState extends State<TaskPage> {
                         Navigator.pop(context);
                       });
                     },
-                    child: Text('yes'),
+                    child: const Text('yes'),
                   ),
                   MaterialButton(
                     onPressed: (){
@@ -89,7 +90,7 @@ class _TaskPageState extends State<TaskPage> {
                         Navigator.pop(context);
                       });
                     },
-                    child: Text('No'),
+                    child: const Text('No'),
                   ),
                 ],
               );
@@ -99,17 +100,21 @@ class _TaskPageState extends State<TaskPage> {
             title: Text(task.todo),
             subtitle: Text(task.timeStamp.toString()),
             leading: task.done
-                ? Icon(
+                ? const Icon(
                     Icons.check_box,
                     color: Colors.green,
                   )
-                : Icon(Icons.check_box_outline_blank),
+                : const Icon(Icons.check_box_outline_blank),
             onTap: (){
-              return _confirmCheckBox();
+              return confirmCheckBox();
             },
             onLongPress: (){
-              return _confirmDelete();
+              // return confirmDelete();
             },
+            trailing: IconButton(
+              icon: const Icon(Icons.delete),
+              onPressed: confirmDelete,
+            ),
           );
 
     });
@@ -122,7 +127,7 @@ class _TaskPageState extends State<TaskPage> {
         _box = snapshot.data;
         return _todoList();
       }else{
-        return Center(child: const CircularProgressIndicator());
+        return const Center(child: CircularProgressIndicator());
       }
     });
   }
@@ -132,7 +137,7 @@ class _TaskPageState extends State<TaskPage> {
   displayTaskPop(){
     showDialog(context: context, builder: (BuildContext context){
       return AlertDialog(
-        title: Text('Add a note'),
+        title: const Text('Add a note'),
         content: TextField(
           onSubmitted: (value){
 
