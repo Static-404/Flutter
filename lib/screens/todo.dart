@@ -23,7 +23,16 @@ class _TaskPageState extends State<TaskPage> {
       appBar: AppBar(
         toolbarHeight: _deviceHeight! * 0.1,
         title: const Text('Daily Planner'),
-
+        actions: [
+          IconButton(
+              onPressed:() {},
+              icon: Icon(Icons.search)
+          ),
+          IconButton(
+              onPressed:() {},
+              icon: Icon(Icons.notification_add)
+          ),
+        ],
       ),
       body: _tasksWidget(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
