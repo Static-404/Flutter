@@ -1,3 +1,7 @@
+import 'package:firstapp/screens/homepage_1.dart';
+import 'package:firstapp/screens/homepage_2.dart';
+import 'package:firstapp/screens/homepage_3.dart';
+import 'package:firstapp/screens/homepage_4.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -15,127 +19,106 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.green.withOpacity(0.7),
-          elevation: 0,
-          title: const Text("Welcome"),
-          centerTitle: true,
-          actions: [
-            IconButton(
-              onPressed: (){
-                Navigator.pushNamed(context, 'Navbar');
-              },
-              icon: const Icon(Icons.person),
-            ),
-          ],
-          // leading:
-          // IconButton(
-          //   icon: Icon(Icons.menu),
-          //   onPressed: () {
-          //
-          //   },
-          // ),
-        ),
-       drawer: Drawer(
-         child: Container(
-           color: Colors.transparent,
-           child: ListView(
-             children: [
-               const DrawerHeader(child: Center(
-                 child: Text(
-                   'E-Lbrary',
-                   style: TextStyle(fontSize: 30),
-                 ),
-               ),
-               ),
-               ListTile(
-                 leading: const Icon(Icons.person),
-                 title: const Text('Registration', style: TextStyle(fontSize: 15),
-                 ),
-                 onTap: (){
-                   Navigator.pushNamed(context, 'Navbar');
-                 },
-               ),
-               ListTile(
-                 leading: const Icon(Icons.login_sharp),
-                 title: const Text('Login', style: TextStyle(fontSize: 15),
-                 ),
-                 onTap: (){
-                   Navigator.pushNamed(context, 'Login');
-                 },
-               ),
-               ListTile(
-                 leading: const Icon(Icons.home),
-                 title: const Text('Home', style: TextStyle(fontSize: 15),
-                 ),
-                 onTap: (){
-                   Navigator.pushNamed(context, '1Page');
-                 },
-               ),
-               ListTile(
-                 leading: const Icon(Icons.library_books_outlined),
-                 title: const Text('Books', style: TextStyle(fontSize: 15),
-                 ),
-                 onTap: (){
-                   Navigator.pushNamed(context, '2Page');
-                 },
-               ),
-               ListTile(
-                 leading: const Icon(Icons.list_alt_outlined,),
-                 title: const Text('Todo', style: TextStyle(fontSize: 15),
-                 ),
-                 onTap: (){
-                   Navigator.pushNamed(context, 'todo');
-                 },
-               ),
-             ],
-           ),
-         ),
-       ),
+       //  appBar: AppBar(
+       //    backgroundColor: Colors.green.withOpacity(0.7),
+       //    elevation: 0,
+       //    title: const Text("Welcome"),
+       //    centerTitle: true,
+       //    actions: [
+       //      IconButton(
+       //        onPressed: (){
+       //          Navigator.pushNamed(context, 'Navbar');
+       //        },
+       //        icon: const Icon(Icons.person),
+       //      ),
+       //    ],
+       //    // leading:
+       //    // IconButton(
+       //    //   icon: Icon(Icons.menu),
+       //    //   onPressed: () {
+       //    //
+       //    //   },
+       //    // ),
+       //  ),
+       // drawer: Drawer(
+       //   child: Container(
+       //     color: Colors.transparent,
+       //     child: ListView(
+       //       children: [
+       //         const DrawerHeader(child: Center(
+       //           child: Text(
+       //             'E-Lbrary',
+       //             style: TextStyle(fontSize: 30),
+       //           ),
+       //         ),
+       //         ),
+       //         ListTile(
+       //           leading: const Icon(Icons.person),
+       //           title: const Text('Registration', style: TextStyle(fontSize: 15),
+       //           ),
+       //           onTap: (){
+       //             Navigator.pushNamed(context, 'Navbar');
+       //           },
+       //         ),
+       //         ListTile(
+       //           leading: const Icon(Icons.login_sharp),
+       //           title: const Text('Login', style: TextStyle(fontSize: 15),
+       //           ),
+       //           onTap: (){
+       //             Navigator.pushNamed(context, 'Login');
+       //           },
+       //         ),
+       //         ListTile(
+       //           leading: const Icon(Icons.home),
+       //           title: const Text('Home', style: TextStyle(fontSize: 15),
+       //           ),
+       //           onTap: (){
+       //             Navigator.pushNamed(context, '1Page');
+       //           },
+       //         ),
+       //         ListTile(
+       //           leading: const Icon(Icons.library_books_outlined),
+       //           title: const Text('Books', style: TextStyle(fontSize: 15),
+       //           ),
+       //           onTap: (){
+       //             Navigator.pushNamed(context, '2Page');
+       //           },
+       //         ),
+       //         ListTile(
+       //           leading: const Icon(Icons.list_alt_outlined,),
+       //           title: const Text('Todo', style: TextStyle(fontSize: 15),
+       //           ),
+       //           onTap: (){
+       //             Navigator.pushNamed(context, 'todo');
+       //           },
+       //         ),
+       //       ],
+       //     ),
+       //   ),
+       // ),
        body: Stack(
            children: [
              PageView(
                controller: _controller,
              onPageChanged: (index){
                  setState(() {
-                   onLastPage = (index == 2);
-                   print("$index, $onLastPage");
+                   onLastPage = (index == 3);
                  });
              },
              children: [
-               Container(
-                 color: Colors.lightGreen,
-                 child: Image.asset('assets/images/book.jpg'),
-               ),
-               Container(
-                 color: Colors.lightGreen,
-                 child: Image.asset('assets/images/library.jpg'),
-               ),
-               Container(
-                 color: Colors.lightGreen,
-                 child: Image.asset('assets/images/reading.jpg'),
-               )
+               HomePage_1(),
+               HomePage_2(),
+               HomePage_3(),
+               HomePage_4(),
              ],
            ),
              Container(
-               alignment: const Alignment(0,0.85),
+               alignment: Alignment(0,-0.75),
                child: Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
-                   GestureDetector(
-                       onTap: () {
-                         Navigator.pushNamed(context, 'Navbar');
-
-                       },
-                       child: const Text('Skip')),
-                   SmoothPageIndicator(
-                     controller: _controller,
-                     count: 3,
-                     effect: const SwapEffect(
-                       dotColor: Colors.blue,
-                       activeDotColor: Colors.white,
-                       type: SwapType.yRotation,
-                     ),
+                   CircleAvatar(
+                     backgroundImage: AssetImage('assets/images/pink pic.jpg'),
                    ),
                    onLastPage
                        ? GestureDetector(
@@ -143,16 +126,29 @@ class _HomeState extends State<Home> {
                          Navigator.pushNamed(context, 'Navbar');
 
                        },
-                       child: const Text('Done'))
+                       child: const Text('Done',style: TextStyle(color: Colors.white),)
+                   )
                        : GestureDetector(
                        onTap: (){
                          _controller.nextPage(
-                             duration: const Duration(microseconds: 500),
+                             duration: const Duration(milliseconds: 500),
                              curve: Curves.easeIn);
                        },
-                       child: const Icon(Icons.arrow_forward)
+                       child: const Icon(Icons.arrow_forward,color: Colors.white,)
                    ),
                  ],
+               ),
+             ),
+             Container(
+               alignment: const Alignment(0,0.70),
+               child: SmoothPageIndicator(
+                 controller: _controller,
+                 count: 4,
+                 effect: const SwapEffect(
+                   dotColor: Colors.black26,
+                   activeDotColor: Colors.white,
+                   type: SwapType.yRotation,
+                 ),
                ),
              )
            ],

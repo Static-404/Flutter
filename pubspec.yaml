@@ -69,6 +69,11 @@ flutter:
     - assets/images/book.jpg
     - assets/images/library.jpg
     - assets/images/reading.jpg
+    - assets/images/blue pic.jpg
+    - assets/images/dark pic.jpg
+    - assets/images/letter v.jfif
+    - assets/images/orange pic.jpg
+    - assets/images/pink pic.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
