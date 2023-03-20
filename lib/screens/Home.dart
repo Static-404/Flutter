@@ -155,12 +155,14 @@ class _HomeState extends State<Home> {
                ),
              ),
              Container(
-               alignment: Alignment(0,0.85),
+               alignment: Alignment(0,0.88),
                child: Row(
                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                  children: [
                    FloatingActionButton.extended(
-                     onPressed: (){},
+                     onPressed: (){
+                       Navigator.pushNamed(context, 'Login');
+                     },
                      label: Text('Log In'),
                      extendedTextStyle:TextStyle(
                        color: Colors.white,
@@ -168,7 +170,9 @@ class _HomeState extends State<Home> {
                      backgroundColor: Colors.transparent,
                    ),
                    FloatingActionButton.extended(
-                     onPressed: (){},
+                     onPressed: (){
+                       Navigator.pushNamed(context, 'Registration');
+                     },
                      label: Text('Sign Up'),
                      extendedTextStyle:TextStyle(
                        color: Colors.black87,
