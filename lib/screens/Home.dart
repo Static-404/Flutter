@@ -112,31 +112,34 @@ class _HomeState extends State<Home> {
                HomePage_4(),
              ],
            ),
-             Container(
-               alignment: Alignment(0,-0.75),
-               child: Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: [
-                   CircleAvatar(
-                     backgroundImage: AssetImage('assets/images/pink pic.jpg'),
-                   ),
-                   onLastPage
-                       ? GestureDetector(
-                       onTap: () {
-                         Navigator.pushNamed(context, 'Navbar');
+             Padding(
+               padding: const EdgeInsets.all(18.0),
+               child: Container(
+                 alignment: Alignment(0,-0.75),
+                 child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: [
+                     CircleAvatar(
+                       backgroundImage: AssetImage('assets/images/letter v,png'),
+                     ),
+                     onLastPage
+                         ? GestureDetector(
+                         onTap: () {
+                           Navigator.pushNamed(context, 'Navbar');
 
-                       },
-                       child: const Text('Done',style: TextStyle(color: Colors.white),)
-                   )
-                       : GestureDetector(
-                       onTap: (){
-                         _controller.nextPage(
-                             duration: const Duration(milliseconds: 500),
-                             curve: Curves.easeIn);
-                       },
-                       child: const Icon(Icons.arrow_forward,color: Colors.white,)
-                   ),
-                 ],
+                         },
+                         child: const Text('Done',style: TextStyle(color: Colors.white),)
+                     )
+                         : GestureDetector(
+                         onTap: (){
+                           _controller.nextPage(
+                               duration: const Duration(milliseconds: 500),
+                               curve: Curves.easeIn);
+                         },
+                         child: const Icon(Icons.arrow_forward,color: Colors.white,)
+                     ),
+                   ],
+                 ),
                ),
              ),
              Container(
@@ -149,6 +152,30 @@ class _HomeState extends State<Home> {
                    activeDotColor: Colors.white,
                    type: SwapType.yRotation,
                  ),
+               ),
+             ),
+             Container(
+               alignment: Alignment(0,0.85),
+               child: Row(
+                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                 children: [
+                   FloatingActionButton.extended(
+                     onPressed: (){},
+                     label: Text('Log In'),
+                     extendedTextStyle:TextStyle(
+                       color: Colors.white,
+                       fontSize: 15,),
+                     backgroundColor: Colors.transparent,
+                   ),
+                   FloatingActionButton.extended(
+                     onPressed: (){},
+                     label: Text('Sign Up'),
+                     extendedTextStyle:TextStyle(
+                       color: Colors.black87,
+                       fontSize: 15,),
+                     backgroundColor: Colors.transparent,
+                   ),
+                 ],
                ),
              )
            ],

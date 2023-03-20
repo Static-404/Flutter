@@ -12,14 +12,52 @@ class HomePage_1 extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: Container(
-        alignment: Alignment(-0.6, 0),
-        child: Text(
-            'Supplements',
-              style: TextStyle(color: Colors.white, fontSize: 50,),
-              textAlign: TextAlign.left,
-              textDirection: TextDirection.ltr,
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 300,
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                    'Supplements',
+                      style: TextStyle(color: Colors.white, fontSize: 50,fontWeight: FontWeight.bold),
+                    ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'Workout plans designed to help you achieve',
+                  style: TextStyle(color: Colors.white, fontSize: 16,),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'your fitness goals - whether losing weight or',
+                  style: TextStyle(color: Colors.white, fontSize: 16,),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'building muscle',
+                  style: TextStyle(color: Colors.white, fontSize: 16,),
+                  textAlign: TextAlign.left,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
