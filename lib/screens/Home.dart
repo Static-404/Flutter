@@ -105,7 +105,7 @@ class _HomeState extends State<Home> {
                    onLastPage = (index == 3);
                  });
              },
-             children: [
+             children: const[
                HomePage_1(),
                HomePage_2(),
                HomePage_3(),
@@ -119,16 +119,15 @@ class _HomeState extends State<Home> {
                  child: Row(
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
-                     CircleAvatar(
-                       backgroundImage: AssetImage('assets/images/letter v,png'),
+                    const CircleAvatar(
+                       backgroundImage: AssetImage('assets/images/lettter v.png'),
                      ),
                      onLastPage
                          ? GestureDetector(
                          onTap: () {
-                           Navigator.pushNamed(context, 'Navbar');
-
+                           Navigator.pushNamed(context,'1Page');
                          },
-                         child: const Text('Done',style: TextStyle(color: Colors.white),)
+                         child: const Text('Done',style: TextStyle(color: Colors.white),),
                      )
                          : GestureDetector(
                          onTap: (){

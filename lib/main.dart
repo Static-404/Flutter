@@ -42,7 +42,6 @@ class MyApp extends StatelessWidget {
     // double deviceWidth = MediaQuery.of(context).size.width;
     // double deviceHeight = MediaQuery.of(context).size.height;
     return MaterialApp(
-      // routerConfig: _router,
       title: 'Library App',
       theme: ThemeData(
         primarySwatch: Colors.green,

@@ -12,99 +12,114 @@ class _FirstPageState extends State<FirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Library',
-          style: TextStyle(color: Colors.black),
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
+        title: Text(
+          'Store',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         actions: [
           IconButton(onPressed: () {
             Navigator.pushNamed(context, '2Page');
-          }, icon: const Icon(Icons.book),)
+          }, icon: const Icon(Icons.notification_add,color: Colors.grey,),
+          ),
+          IconButton(onPressed: () {
+            Navigator.pushNamed(context, '');
+          }, icon: const Icon(Icons.person, color: Colors.grey,),
+          ),
         ],
+        elevation: 0,
       ),
       body: Container(
-        color: Colors.greenAccent,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    border: Border.all(
-                      color: Colors.green,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(8.5)),
-                width: 400,
-                height: 300,
-                child: const Text(
-                  'Dashboard',
-                  textAlign: TextAlign.start,
-                  // textDirection: TextDirection.ltr,
-                  style: TextStyle(color: Colors.black54, fontSize: 24,),
+        color: Colors.white,
+        child: ListView(
+
+          children: [
+            Container(
+              child: Text(
+                'Training Plan',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold
                 ),
               ),
-              const SizedBox(
-                height: 80,
+              alignment: Alignment.center,
+              margin: EdgeInsets.all(16.0),
+              height: 160,
+              decoration: BoxDecoration(
+                image:DecorationImage(
+                  image: AssetImage('assets/images/blue pic.jpg'),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(10)
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        border: Border.all(
-                          width: 2,
-                          color: Colors.greenAccent,
-                        ),
-                        borderRadius: BorderRadius.circular(10.0),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.blueGrey,
-                            offset: Offset(0, 0),
-                          ),
-                        ]),
-                    width: 190,
-                    height: 170,
-                    child: const Center(
-                      child: Text(
-                        '2',
-                        style: TextStyle(color: Colors.black, fontSize: 24),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        border: Border.all(
-                          color: Colors.greenAccent,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(10.0),
-                        boxShadow: const[
-                          BoxShadow(
-                            color: Colors.blueGrey,
-                            offset: Offset(0, 0),
-                          ),
-                        ]),
-                    width: 190,
-                    height: 170,
-                    child: const Center(
-                      child:
-                      Text(
-                        '3',
-                        style: TextStyle(color: Colors.black, fontSize: 24),
-                      ),
-                    ),
-                  ),
-                ],
+            ),
+            Container(
+              child: Text(
+                'Meal Plan',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold
+                ),
               ),
-            ],
-          ),
+              alignment: Alignment.center,
+              margin: EdgeInsets.all(16.0),
+              height: 160,
+              decoration: BoxDecoration(
+                image:DecorationImage(
+                  image: AssetImage('assets/images/pink pic.jpg'),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+            Container(
+              child: Text(
+                'Supplements Plan',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold
+                ),
+              ),
+              alignment: Alignment.center,
+              margin: EdgeInsets.all(16.0),
+              height: 160,
+              decoration: BoxDecoration(
+                image:DecorationImage(
+                  image: AssetImage('assets/images/dark pic.jpg'),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+            Container(
+              child: Text(
+                'Karate Plan',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold
+                ),
+              ),
+              alignment: Alignment.center,
+              margin: EdgeInsets.all(16.0),
+              height: 160,
+              decoration: BoxDecoration(
+                image:DecorationImage(
+                  image: AssetImage('assets/images/orange pic.jpg'),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+          ],
         ),
       ),
     );
