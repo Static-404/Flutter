@@ -8,20 +8,20 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
+
+  int currentIndex = 0;
+  void onTap(int index){
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        title: Text(
-          'Store',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
         actions: [
           IconButton(onPressed: () {
             Navigator.pushNamed(context, '2Page');
@@ -40,7 +40,31 @@ class _FirstPageState extends State<FirstPage> {
 
           children: [
             Container(
-              child: Text(
+              alignment: Alignment.topLeft,
+              margin: const EdgeInsets.all(16.0),
+              height: 30,
+              child: const Text(
+                'Store',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.left,
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              margin: const EdgeInsets.all(16.0),
+              height: 160,
+              decoration: BoxDecoration(
+                image:const DecorationImage(
+                  image: AssetImage('assets/images/blue pic.jpg'),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(10)
+              ),
+              child: const Text(
                 'Training Plan',
                 style: TextStyle(
                   color: Colors.white,
@@ -48,19 +72,19 @@ class _FirstPageState extends State<FirstPage> {
                   fontWeight: FontWeight.bold
                 ),
               ),
+            ),
+            Container(
               alignment: Alignment.center,
-              margin: EdgeInsets.all(16.0),
+              margin: const EdgeInsets.all(16.0),
               height: 160,
               decoration: BoxDecoration(
-                image:DecorationImage(
-                  image: AssetImage('assets/images/blue pic.jpg'),
+                image:const DecorationImage(
+                  image: AssetImage('assets/images/pink pic.jpg'),
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.circular(10)
               ),
-            ),
-            Container(
-              child: Text(
+              child: const Text(
                 'Meal Plan',
                 style: TextStyle(
                     color: Colors.white,
@@ -68,19 +92,19 @@ class _FirstPageState extends State<FirstPage> {
                     fontWeight: FontWeight.bold
                 ),
               ),
+            ),
+            Container(
               alignment: Alignment.center,
-              margin: EdgeInsets.all(16.0),
+              margin: const EdgeInsets.all(16.0),
               height: 160,
               decoration: BoxDecoration(
-                image:DecorationImage(
-                  image: AssetImage('assets/images/pink pic.jpg'),
+                image:const DecorationImage(
+                  image: AssetImage('assets/images/dark pic.jpg'),
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.circular(10)
               ),
-            ),
-            Container(
-              child: Text(
+              child: const Text(
                 'Supplements Plan',
                 style: TextStyle(
                     color: Colors.white,
@@ -88,19 +112,19 @@ class _FirstPageState extends State<FirstPage> {
                     fontWeight: FontWeight.bold
                 ),
               ),
+            ),
+            Container(
               alignment: Alignment.center,
-              margin: EdgeInsets.all(16.0),
+              margin: const EdgeInsets.all(16.0),
               height: 160,
               decoration: BoxDecoration(
-                image:DecorationImage(
-                  image: AssetImage('assets/images/dark pic.jpg'),
+                image:const DecorationImage(
+                  image: AssetImage('assets/images/orange pic.jpg'),
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.circular(10)
               ),
-            ),
-            Container(
-              child: Text(
+              child: const Text(
                 'Karate Plan',
                 style: TextStyle(
                     color: Colors.white,
@@ -108,19 +132,32 @@ class _FirstPageState extends State<FirstPage> {
                     fontWeight: FontWeight.bold
                 ),
               ),
-              alignment: Alignment.center,
-              margin: EdgeInsets.all(16.0),
-              height: 160,
-              decoration: BoxDecoration(
-                image:DecorationImage(
-                  image: AssetImage('assets/images/orange pic.jpg'),
-                  fit: BoxFit.cover,
-                ),
-                borderRadius: BorderRadius.circular(10)
-              ),
             ),
           ],
         ),
+      ),
+      floatingActionButtonLocation:FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        elevation: 5.0,
+        onPressed: (){},
+        backgroundColor: Colors.pink,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: currentIndex,
+        onTap: onTap,
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.black26,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        elevation: 0,
+        items: const[
+          BottomNavigationBarItem(icon: Icon(Icons.table_chart), label: "Feed"),
+          BottomNavigationBarItem(icon: Icon(Icons.stacked_bar_chart), label: "Progress"),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_basket), label: "Store"),
+          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: "Menu"),
+        ],
       ),
     );
   }
