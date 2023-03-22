@@ -10,6 +10,7 @@ class FirstPage extends StatefulWidget {
 class _FirstPageState extends State<FirstPage> {
 
   int currentIndex = 0;
+
   void onTap(int index){
     setState(() {
       currentIndex = index;
@@ -138,7 +139,7 @@ class _FirstPageState extends State<FirstPage> {
       ),
       floatingActionButtonLocation:FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        elevation: 5.0,
+        elevation: 3.0,
         onPressed: (){},
         backgroundColor: Colors.pink,
       ),
