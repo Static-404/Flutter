@@ -32,7 +32,7 @@ class _SecondPageState extends State<SecondPage> {
         child: ListView(
           scrollDirection: Axis.vertical,
             children: ListTile.divideTiles(context:context,
-              color: Colors.blueAccent,
+              color: Colors.black,
               tiles:[
               ListTile(
                 onTap: (){
