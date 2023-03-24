@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 
-class SecondPage extends StatefulWidget {
+class SecondPage extends StatelessWidget {
   const SecondPage({Key? key}) : super(key: key);
 
-  @override
-  State<SecondPage> createState() => _SecondPageState();
-}
-
-class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +29,7 @@ class _SecondPageState extends State<SecondPage> {
             children: ListTile.divideTiles(context:context,
               color: Colors.black,
               tiles:[
+                _list('one', 'Book 1',Icons.list,),
               ListTile(
                 onTap: (){
                   Navigator.pushNamed(context, 'todo');
@@ -143,4 +139,12 @@ class _SecondPageState extends State<SecondPage> {
       ),
     );
   }
+  Widget _list (String h1, String h2, var ic,) {
+    return ListTile(
+      leading: Icon(ic),
+      title: Text(h1),
+      subtitle: Text(h2),
+    );
+  }
 }
+
