@@ -16,7 +16,7 @@ class SecondPage extends StatelessWidget {
         actions: [
           IconButton(onPressed: () {
             Navigator.pushNamed(context, 'Home');
-          }, icon: Icon(Icons.home))
+          }, icon: const Icon(Icons.home))
         ],
         backgroundColor: Colors.green,
         title: const Text('Books'),
@@ -29,111 +29,54 @@ class SecondPage extends StatelessWidget {
             children: ListTile.divideTiles(context:context,
               color: Colors.black,
               tiles:[
-                _list('Zero', 'Book 0',Icons.list,),
-              ListTile(
-                onTap: (){
-                  Navigator.pushNamed(context, 'todo');
-                },
-                leading: Icon(Icons.list),
-                title: Text('one',),
-                subtitle: Text('Book 1'),
-              ),
-              ListTile(
-                onTap: (){
-                  Navigator.pushNamed(context, 'todo');
-                },
-                leading: Icon(Icons.list),
-                title: Text('two',),
-                subtitle: Text('Book 2'),
-              ),
-              ListTile(
-                onTap: (){
-                  Navigator.pushNamed(context, '1Page');
-                },
-                leading: Icon(Icons.list),
-                title: Text('three',),
-                subtitle: Text('Book 3'),
-              ),
-              ListTile(
-                onTap: (){
-                  Navigator.pushNamed(context, '1Page');
-                },
-                leading: Icon(Icons.list),
-                title: Text('four',),
-                subtitle: Text('Book 4'),
-              ),
-              ListTile(
-                onTap: (){
-                  Navigator.pushNamed(context, '1Page');
-                },
-                leading: Icon(Icons.list),
-                title: Text('five',),
-                subtitle: Text('Book 5'),
-              ),
-              ListTile(
-                onTap: (){
-                  Navigator.pushNamed(context, '1Page');
-                },
-                leading: Icon(Icons.list),
-                title: Text('six',),
-                subtitle: Text('Book 6'),
-              ),
-              ListTile(
-                onTap: (){
-                  Navigator.pushNamed(context, '1Page');
-                },
-                leading: Icon(Icons.list),
-                title: Text('seven',),
-                subtitle: Text('Book 7'),
-              ),
-              ListTile(
-                onTap: (){
-                  Navigator.pushNamed(context, '1Page');
-                },
-                leading: Icon(Icons.list),
-                title: Text('eight',),
-                subtitle: Text('Book 8'),
-              ),
-              ListTile(
-                onTap: (){
-                  Navigator.pushNamed(context, '1Page');
-                },
-                leading: Icon(Icons.list),
-                title: Text('nine',),
-                subtitle: Text('Book 9'),
-              ),
-              ListTile(
-                onTap: (){
-                  Navigator.pushNamed(context, '1Page');
-                },
-                leading: Icon(Icons.list),
-                title: Text('Ten',),
-                subtitle: Text('Book 10'),
-              ),
-              ListTile(
-                onTap: (){
-                  Navigator.pushNamed(context, '1Page');
-                },
-                leading: Icon(Icons.list),
-                title: Text('eleven',),
-                subtitle: Text('Book 11'),
-              ),
-              ListTile(
-                onTap: (){
-                  Navigator.pushNamed(context, '1Page');
-                },
-                leading: Icon(Icons.list),
-                title: Text('twelve',),
-                subtitle: Text('Book 12'),
-              ),
-              ListTile(
-                onTap: (){
-                  Navigator.pushNamed(context, '1Page');
-                },
-                leading: Icon(Icons.list),
-                title: Text('thirteen',),
-                subtitle: Text('Book 13'),
-              ),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context, 'todo');
+                  }, child: _list('One', 'Book 1',Icons.list,)),
+                GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, 'todo');
+                    }, child: _list('Two', 'Book 2',Icons.list,)),
+                GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '1Page');
+                    }, child: _list('Three', 'Book 3',Icons.list,)),
+                GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '1Page');
+                    }, child: _list('Four', 'Book 4',Icons.list,)),
+                GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '1Page');
+                    }, child: _list('Five', 'Book 5',Icons.list,)),
+                GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '1Page');
+                    }, child: _list('Six', 'Book 6',Icons.list,)),
+                GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '1Page');
+                    }, child: _list('Seven', 'Book 7',Icons.list,)),
+                GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '1Page');
+                    }, child: _list('Eight', 'Book 8',Icons.list,)),
+                GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '1Page');
+                    }, child: _list('Nine', 'Book 9',Icons.list,)),
+                GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '1Page');
+                    }, child: _list('Ten', 'Book 10',Icons.list,)),
+                GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '1Page');
+                    }, child: _list('Eleven', 'Book 11',Icons.list,)),
+                GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '1Page');
+                    }, child: _list('Twelve', 'Book 12',Icons.list,)),
             ]).toList(),
           ),
       ),
