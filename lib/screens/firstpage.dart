@@ -35,26 +35,28 @@ class _FirstPageState extends State<FirstPage> {
         ],
         elevation: 0,
       ),
-      body: Container(
-        color: Colors.white,
-        child: ListView(
+      body: ListView(
 
-          children: [
-            Container(
-              alignment: Alignment.topLeft,
-              margin: const EdgeInsets.all(16.0),
-              height: 30,
-              child: const Text(
-                'Store',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.left,
+        children: [
+          Container(
+            alignment: Alignment.topLeft,
+            margin: const EdgeInsets.all(16.0),
+            height: 30,
+            child: const Text(
+              'Store',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
               ),
+              textAlign: TextAlign.left,
             ),
-            Container(
+          ),
+          GestureDetector(
+            onTap: (){
+              Navigator.pushNamed(context, 'todo');
+            },
+            child: Container(
               alignment: Alignment.center,
               margin: const EdgeInsets.all(16.0),
               height: 160,
@@ -65,16 +67,14 @@ class _FirstPageState extends State<FirstPage> {
                 ),
                 borderRadius: BorderRadius.circular(10)
               ),
-              child: const Text(
-                'Training Plan',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold
-                ),
-              ),
+              child: _title('Training Plan')
             ),
-            Container(
+          ),
+          GestureDetector(
+            onTap: (){
+              Navigator.pushNamed(context, 'todo');
+            },
+            child: Container(
               alignment: Alignment.center,
               margin: const EdgeInsets.all(16.0),
               height: 160,
@@ -85,16 +85,14 @@ class _FirstPageState extends State<FirstPage> {
                 ),
                 borderRadius: BorderRadius.circular(10)
               ),
-              child: const Text(
-                'Meal Plan',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold
-                ),
-              ),
+              child: _title('Meal Plan')
             ),
-            Container(
+          ),
+          GestureDetector(
+            onTap: (){
+              Navigator.pushNamed(context, 'todo');
+            },
+            child: Container(
               alignment: Alignment.center,
               margin: const EdgeInsets.all(16.0),
               height: 160,
@@ -105,16 +103,14 @@ class _FirstPageState extends State<FirstPage> {
                 ),
                 borderRadius: BorderRadius.circular(10)
               ),
-              child: const Text(
-                'Supplements Plan',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold
-                ),
-              ),
+              child: _title('Supplements Plan')
             ),
-            Container(
+          ),
+          GestureDetector(
+            onTap: (){
+              Navigator.pushNamed(context, 'todo');
+            },
+            child: Container(
               alignment: Alignment.center,
               margin: const EdgeInsets.all(16.0),
               height: 160,
@@ -125,17 +121,10 @@ class _FirstPageState extends State<FirstPage> {
                 ),
                 borderRadius: BorderRadius.circular(10)
               ),
-              child: const Text(
-                'Karate Plan',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold
-                ),
-              ),
+              child: _title('Karate Plan'),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       floatingActionButtonLocation:FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
@@ -159,6 +148,16 @@ class _FirstPageState extends State<FirstPage> {
           BottomNavigationBarItem(icon: Icon(Icons.shopping_basket), label: "Store"),
           BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: "Menu"),
         ],
+      ),
+    );
+  }
+  Widget _title (String title,){
+    return Text(
+        title,
+      style: const TextStyle(
+          color: Colors.white,
+          fontSize: 30,
+          fontWeight: FontWeight.bold
       ),
     );
   }
