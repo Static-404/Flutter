@@ -4,6 +4,10 @@ import 'package:firstapp/screens/Home.dart';
 import 'package:firstapp/screens/Navbar.dart';
 import 'package:firstapp/screens/Login.dart';
 import 'package:firstapp/screens/Registration.dart';
+import 'package:firstapp/screens/page_1.dart';
+import 'package:firstapp/screens/page_2.dart';
+import 'package:firstapp/screens/page_3.dart';
+import 'package:firstapp/screens/page_4.dart';
 import 'package:firstapp/screens/secondpage.dart';
 import 'package:firstapp/screens/todo.dart';
 import 'package:flutter/material.dart';
@@ -55,6 +59,10 @@ class MyApp extends StatelessWidget {
         '1Page': (context) => const FirstPage(),
         '2Page': (context) => const SecondPage(),
         'todo': (context) => const TaskPage(),
+        'page1': (context) => const Page1(),
+        'page2': (context) => const Page2(),
+        'page3': (context) => const Page3(),
+        'page4': (context) => const Page4(),
       },
     );
   }

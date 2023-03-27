@@ -54,7 +54,7 @@ class _FirstPageState extends State<FirstPage> {
           ),
           GestureDetector(
             onTap: (){
-              Navigator.pushNamed(context, 'todo');
+              Navigator.pushNamed(context, 'page1');
             },
             child: Container(
               alignment: Alignment.center,
@@ -72,7 +72,7 @@ class _FirstPageState extends State<FirstPage> {
           ),
           GestureDetector(
             onTap: (){
-              Navigator.pushNamed(context, 'todo');
+              Navigator.pushNamed(context, 'page2');
             },
             child: Container(
               alignment: Alignment.center,
@@ -90,7 +90,7 @@ class _FirstPageState extends State<FirstPage> {
           ),
           GestureDetector(
             onTap: (){
-              Navigator.pushNamed(context, 'todo');
+              Navigator.pushNamed(context, 'page3');
             },
             child: Container(
               alignment: Alignment.center,
@@ -108,7 +108,7 @@ class _FirstPageState extends State<FirstPage> {
           ),
           GestureDetector(
             onTap: (){
-              Navigator.pushNamed(context, 'todo');
+              Navigator.pushNamed(context, 'page4');
             },
             child: Container(
               alignment: Alignment.center,
