@@ -10,35 +10,24 @@ class Page1 extends StatelessWidget {
         title: const Text('First Page'),
         centerTitle: true,
       ),
-      body: Stack(
-        children:[
-          Container(
-            height: 250,
-            width: 380,
-            alignment: Alignment(-1,0),
-            child: Image.asset('assets/images/dark pic.jpg'),
-          ),
-          Container(
-            alignment: Alignment(0,0),
-            child: Column(
-              children: [
-                Text(
-                  'Hello',
-                  style: TextStyle(fontSize: 20,color: Colors.black87,),
-                ),
-                Text(
-                  'Hello',
-                  style: TextStyle(fontSize: 20,color: Colors.black87,),
-                ),
-                Text(
-                  'Hello',
-                  style: TextStyle(fontSize: 20,color: Colors.black87,),
-                ),
-              ],
+      body: Stack(children: [
+        Container(
+          height: 250,
+          width: 380,
+          alignment: Alignment(-1, 0),
+          child: Image.asset('assets/images/dark pic.jpg'),
+        ),
+        Container(
+          alignment: Alignment(0, 0),
+          child: Text(
+            'Hello',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.black87,
             ),
           ),
-        ] 
-      ),
+        ),
+      ]),
     );
   }
 }
